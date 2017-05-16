@@ -23,7 +23,6 @@
     const redirectUri = window.location.href.split('#')[0];
     const scopes = [
       'user-read-recently-played',
-      'playlist-read-public'
     ];
     window.location = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join('%20')}&response_type=token`;
   });
