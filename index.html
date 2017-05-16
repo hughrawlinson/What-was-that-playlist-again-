@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <title>Spotify Rapid Web Prototyping Endpoint</title>
+    <meta charset="utf8">
+    <link href="https://sp-bootstrap.global.ssl.fastly.net/8.0.0/sp-bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top navbar-semi-transparent" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="sidepanel" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <span class="navbar-logo">Spotify</span>
+            <span class="navbar-title">What was that playlist again?</span>
+          </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="btn btn-green navbar-btn" id="navbarButton" href="#">Button</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav>
+    <div class="jumbotron jumbotron-inverse">
+      <div class="container">
+        <h1>What was that playlist again?</h1>
+        <p>Playing a great playlist earlier but don't remember what it was? Use this app to find recently played playlists, artists, and albums.<p>
+        <p><a class="btn btn-stroked-light" id="spotifyLogin" role="button">Log in with Spotify</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row" id="root"></div>
+    </div>
+    <footer class="footer footer-default footer-simple" role="contentinfo">
+      <div class="container">
+        <nav class="row row-small">
+          <div class="col-xs-7">
+            <ul class="nav nav-small">
+              <li>
+                <a href="#">Legal</a>
+              </li>
+              <li>
+                <a href="#">Cookies</a>
+              </li>
+              <li>
+                <a id="_bapw-link" href="http://info.evidon.com/pub_info/1120?v=1" target="_blank"><img src="https://cdn.betrad.com/pub/icon1.png" id="_bapw-icon" class="img-adchoices"> <span>AdChoices</span></a>
+                <script>
+/*<![CDATA[*/(function(){var c=1120,g=1816,b=false,i=document,f=i.getElementById("_bapw-link"),h=(i.location.protocol=="https:"),a=(h?"https":"http")+"://";function e(j){var d=new Image();d.src=a+"l.betrad.com/pub/p.gif?pid="+c+"&ocid="+g+"&i"+j+"=1&r="+Math.random()}f.onclick=function(){e("c");return true};e("i")}());/*]]>*/
+                </script>
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-5 text-right">
+            <a class="market" href="#">
+              <div class="media">
+                <div class="media-body media-middle">USA</div>
+                <div class="media-right media-middle">
+                  <span class="media-object flag-icon flag-icon-us"></span>
+                </div>
+              </div>
+            </a>
+            <small class="copyright">&copy; 2015 Spotify AB</small>
+          </div>
+        </nav>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+    <script src="scripts/main.js" type=""></script>
+  </body>
+</html>
