@@ -144,11 +144,13 @@
           .map(d => d.albums || d)
           .map(d => {
             if (d && d[0]) {
-              return React.createElement('div', {className:"row",style: {clear: "both"}}, [
-                React.createElement('h1', null, `${(uri => uri == 'artist' ? 'Artists' : uri == 'album' ? 'Albums' : 'Playlists')(d[0].type)}`),
-                d.map(el => React.createElement(PlaylistThumbnail, el)),
-                React.createElement('hr')
-              ]);
+              return React.createElement('div', {className: "row"},
+                React.createElement('div', {className: 'col-xs-12'}, [
+                  React.createElement('h1', null, `${(uri => uri == 'artist' ? 'Artists' : uri == 'album' ? 'Albums' : 'Playlists')(d[0].type)}`),
+                  React.createElement('div', {className: "row"}, d.map(el => React.createElement(PlaylistThumbnail, el))),
+                  React.createElement('hr')
+                ])
+              );
             }
           })
         ), document.getElementById('root'));
