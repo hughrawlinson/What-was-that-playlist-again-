@@ -144,7 +144,7 @@
           .map(d => d.albums || d)
           .map(d => {
             if (d && d[0]) {
-              return React.createElement('div', {style: {clear: "both"}}, [
+              return React.createElement('div', {className:"row",style: {clear: "both"}}, [
                 React.createElement('h1', null, `${(uri => uri == 'artist' ? 'Artists' : uri == 'album' ? 'Albums' : 'Playlists')(d[0].type)}`),
                 d.map(el => React.createElement(PlaylistThumbnail, el)),
                 React.createElement('hr')
