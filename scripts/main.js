@@ -77,12 +77,10 @@
           }, React.createElement('a', {
             className: 'btn btn-stroked-dark',
             role: 'button',
-            href: '#',
-            onClick: (clickEvent) => {
-              clickEvent.preventDefault();
-           },
+            target: '_blank',
+            href: props.external_urls.spotify,
             key: `a${props.id}`,
-          }, 'Play')),
+          }, 'Open in Spotify')),
         ]),
       ]),
     ]);
