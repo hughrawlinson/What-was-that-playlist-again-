@@ -111,9 +111,8 @@
           .filter((item, pos, self) => self.indexOf(item) == pos)
       ))
       const contexts = partiallyAppliedContextExtractors.map(e => e(data));
-
       // Assumption: each URI in the array is of the same type
-      const getAllUris = uris => (uri =>
+      const getAllUris = uris => uris[0] ? (uri =>
           uri == 'artist' ?
             `${getSeveralArtistsEndpoint}?ids=${uris.map(e=>e.split(':')[2]).join(',')}` :
             uri == 'album' ?
@@ -125,7 +124,7 @@
                   )(uriComponents[2],uriComponents[4])
                 )(e.split(':'))
               )
-          )(uris[0].split(':')[1])
+          )(uris[0].split(':')[1]) : []
 
       Promise.all(contexts.map(getAllUris).map(contextType =>
         typeof contextType === 'string' ?
@@ -146,17 +145,13 @@
           .map(d => d.artists || d)
           .map(d => d.albums || d)
           .map(d => {
-            console.log(d)
-            // const obj = object.assign({}, e, {
-            //   key: `playlistthumbnail${e.id}`,
-            // });
-            // return React.createElement(PlaylistThumbnail, obj, null);
-
-            return React.createElement('div', {style: {clear: "both"}}, [
-              React.createElement('h1', null, `${(uri => uri == 'artist' ? 'Artists' : uri == 'album' ? 'Albums' : 'Playlists')(d[0].type)}`),
-              d.map(el => React.createElement(PlaylistThumbnail, el)),
-              React.createElement('hr')
-            ]);
+            if (d && d[0]) {
+              return React.createElement('div', {style: {clear: "both"}}, [
+                React.createElement('h1', null, `${(uri => uri == 'artist' ? 'Artists' : uri == 'album' ? 'Albums' : 'Playlists')(d[0].type)}`),
+                d.map(el => React.createElement(PlaylistThumbnail, el)),
+                React.createElement('hr')
+              ]);
+            }
           })
         ), document.getElementById('root'));
       });
